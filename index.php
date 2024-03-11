@@ -16,6 +16,13 @@ function reverseWords($str)
     return $reversed;
 }
 
+function reverseWordWithCasePreservation($word)
+{
+    $length = strlen($word);
+    $position = [];
+
+    ctype_upper($word);
+}
 $input = "third-part";
 $output = reverseWords($input);
 echo $output;
