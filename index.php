@@ -4,11 +4,12 @@ function reverseWords($str)
 {
     // разбиваем входящую строку на слова, используя разделитель, описанный в RegExp.
     // разделитель также попадает в результирующий массив
-    $words = preg_split("/([\s,'-.!?]+)/", $str, -1, PREG_SPLIT_DELIM_CAPTURE);
+    $words = preg_split("/([\s,'-.`!?]+)/", $str, -1, PREG_SPLIT_DELIM_CAPTURE);
     $reversed = '';
 
     //вывдем на экран полученный массив
     print_r($words);
+    echo "<br>";
 
     // перебираем полученный массив поиндексно
     foreach ($words as $word) {
@@ -46,6 +47,61 @@ function reverseWordWithCasePreservation($word)
     return $reversed;
 }
 
-$input = "heLLo-World!";
+function testReverseWord()
+{
+    $input1 = "Cat";
+    $expected1 = "Tac";
+    $output1 = reverseWords($input1);
+    if (assert($output1 === $expected1)) {
+        echo "Test 1 OK<br>";
+    }
+
+    $input2 = "houSe";
+    $expected2 = "esuOh";
+    $output2 = reverseWords($input2);
+    if (assert($output2 === $expected2)) {
+        echo "Test 2 OK <br>";
+    }
+
+    $input3 = "elEpHant";
+    $expected3 = "tnAhPele";
+    $output3 = reverseWords($input3);
+    if (assert($output3 === $expected3)) {
+        echo " Test 3 OK <br>";
+    }
+
+    $input4 = "cat,";
+    $expected4 = "tac,";
+    $output4 = reverseWords($input4);
+    if (assert($output4 === $expected4)) {
+        echo "Test 4 OK <br>";
+    }
+
+    $input5 = "is 'cold' now";
+    $expected5 = "si 'dloc' won";
+    $output5 = reverseWords($input5);
+    if (assert($output5 === $expected5)) {
+        echo "Test 5 OK <br>";
+    }
+
+    $input6 = "third-part";
+    $expected6 = "driht-trap";
+    $output6 = reverseWords($input6);
+    if (assert($output6 === $expected6)) {
+        echo "Test 6 OK <br>";
+    }
+
+    $input7 = "can`t";
+    $expected7 = "nac`t";
+    $output7 = reverseWords($input7);
+    if (assert($output7 === $expected7)) {
+        echo "Test 7 OK <br>";
+    }
+
+}
+
+$input = "elEpHant";
 $output = reverseWords($input);
 echo $output;
+
+testReverseWord();
