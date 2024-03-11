@@ -26,11 +26,10 @@ function reverseWords($str)
 
 function reverseWordWithCasePreservation($word)
 {
-    $length = strlen($word);
     $position = [];
     //перебираем слово посимвольно, выясняем индекс символа в верхнем регистре
     //индексы сохраняем в массив
-    for ($i = 0; $i < $length; $i++) {
+    for ($i = 0; $i < strlen($word); $i++) {
         if (ctype_upper($word[$i])) {
             $position[] = $i;
         }
