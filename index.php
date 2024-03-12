@@ -58,44 +58,38 @@ function testReverseWord()
     $input2 = "houSe";
     $expected2 = "esuOh";
     $output2 = reverseWords($input2);
-    if (assert($output2 === $expected2)) {
-        echo "Test 2 OK <br>";
-    }
+    assert($output2 === $expected2);
+    echo "Test 2 OK <br>";
 
     $input3 = "elEpHant";
     $expected3 = "tnAhPele";
     $output3 = reverseWords($input3);
-    if (assert($output3 === $expected3)) {
-        echo " Test 3 OK <br>";
-    }
+    assert($output3 === $expected3);
+    echo " Test 3 OK <br>";
 
     $input4 = "cat,";
     $expected4 = "tac,";
     $output4 = reverseWords($input4);
-    if (assert($output4 === $expected4)) {
-        echo "Test 4 OK <br>";
-    }
+    assert($output4 === $expected4);
+    echo "Test 4 OK <br>";
 
     $input5 = "is 'cold' now";
     $expected5 = "si 'dloc' won";
     $output5 = reverseWords($input5);
-    if (assert($output5 === $expected5)) {
-        echo "Test 5 OK <br>";
-    }
+    assert($output5 === $expected5);
+    echo "Test 5 OK <br>";
 
     $input6 = "third-part";
     $expected6 = "driht-trap";
     $output6 = reverseWords($input6);
-    if (assert($output6 === $expected6)) {
-        echo "Test 6 OK <br>";
-    }
+    assert($output6 === $expected6);
+    echo "Test 6 OK <br>";
 
     $input7 = "can`t";
     $expected7 = "nac`t";
     $output7 = reverseWords($input7);
-    if (assert($output7 === $expected7)) {
-        echo "Test 7 OK <br>";
-    }
+    assert($output7 === $expected7);
+    echo "Test 7 OK <br>";
 
 }
 
