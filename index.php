@@ -8,8 +8,9 @@ function reverseWords($str)
     $reversed = '';
 
     //вывдем на экран полученный массив
+    echo "<pre>";
     print_r($words);
-    echo "<br>";
+    echo "</pre><br>";
 
     // перебираем полученный массив поиндексно
     foreach ($words as $word) {
@@ -40,7 +41,7 @@ function reverseWordWithCasePreservation($word)
 
     //перебираем массив с индексами, переводим символ с индексом в верхний регистр
     foreach ($position as $pos) {
-        $reversed[$pos] = strtoupper($reversed[$pos]);
+        $reversed[$pos] = mb_strtoupper($reversed[$pos]);
     }
 
     return $reversed;
@@ -93,8 +94,8 @@ function testReverseWord()
 
 }
 
-$input = "elEpHant";
-$output = reverseWords($input);
-echo $output;
+// $input = "elEpHant";
+// $output = reverseWords($input);
+// echo $output;
 
 testReverseWord();
